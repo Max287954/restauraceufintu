@@ -1,6 +1,6 @@
 ---
 import Layout from "@components/Layout.astro";
-import BackgroundDoodles from "@components/BackgroundDoodles.astro";
+import Doodles from "@components/Doodles.astro";
 import { siteConfig } from "@data/profile";
 import { getCollection } from "astro:content";
 
@@ -18,7 +18,7 @@ const pageDescription = `Jídelní lístek ${siteConfig.name} — stálá nabíd
 ---
 
 <Layout title="Jídelní lístek" description={pageDescription} canonical="/jidelni-listek/">
-  <BackgroundDoodles />
+  <Doodles />
   <section class="section-padding relative bg-organic">
     <div class="bg-blob-right"></div>
     <div class="section-container relative z-10">

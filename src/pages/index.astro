@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "@components/Layout.astro";
-import BackgroundDoodles from "@components/BackgroundDoodles.astro";
+import Doodles from "@components/Doodles.astro";
 import { siteConfig } from "@data/profile";
 
 const pageDescription = `${siteConfig.name} v Krajkové — poctivá česká kuchyně, denní menu a příjemné posezení. Otevřeno každý den.`;
@@ -11,7 +11,7 @@ const mapsEmbedUrl =
 ---
 
 <Layout title="Domů" description={pageDescription} canonical="/">
-  <BackgroundDoodles />
+  <Doodles />
   <!-- Hero Section -->
   <section class="relative bg-organic min-h-[85vh] flex items-center">
     <div class="bg-blob-left"></div>
@@ -42,8 +42,8 @@ const mapsEmbedUrl =
         <!-- Right: Hero Image -->
         <div class="hidden lg:block">
           <Image
-            src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop&q=80"
-            alt="Vnitřek restaurace s prostřenými stoly"
+            src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=800&q=80"
+            alt="Příjemné prostředí tradiční hospody Restaurace u Fintů"
             width={800}
             height={600}
             class="rounded-[2rem] shadow-2xl object-cover w-full h-auto"
@@ -75,29 +75,29 @@ const mapsEmbedUrl =
         <div class="relative">
           <div class="grid grid-cols-2 gap-3">
             <Image
-              src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?q=80&w=800&auto=format&fit=crop"
-              alt="České pivo v restauraci"
+              src="https://images.unsplash.com/photo-1599921841143-819065a55cc6?q=80&w=800&auto=format&fit=crop"
+              alt="Horká domácí polévka u Fintů"
               width={400}
               height={400}
               class="w-full h-full object-cover aspect-square rounded-lg shadow-lg"
             />
             <Image
               src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=800&auto=format&fit=crop"
-              alt="Plný talíř českého jídla"
+              alt="Poctivé české hlavní jídlo"
               width={400}
               height={400}
               class="w-full h-full object-cover aspect-square rounded-lg shadow-lg"
             />
             <Image
-              src="https://images.unsplash.com/photo-1599921841143-819065a55cc6?q=80&w=800&auto=format&fit=crop"
-              alt="Svíčková na smetaně"
+              src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop"
+              alt="Kvalitní maso připravené s láskou"
               width={400}
               height={400}
               class="w-full h-full object-cover aspect-square rounded-lg shadow-lg"
             />
             <Image
-              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop"
-              alt="Čepované pivo zblízka"
+              src="https://images.unsplash.com/photo-1579027989536-b7b1f875659b?q=80&w=800&auto=format&fit=crop"
+              alt="Vychlazené čepované pivo v naší restauraci"
               width={400}
               height={400}
               class="w-full h-full object-cover aspect-square rounded-lg shadow-lg"

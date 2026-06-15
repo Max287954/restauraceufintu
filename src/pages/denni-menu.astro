@@ -1,6 +1,6 @@
 ---
 import Layout from "@components/Layout.astro";
-import BackgroundDoodles from "@components/BackgroundDoodles.astro";
+import Doodles from "@components/Doodles.astro";
 import { siteConfig } from "@data/profile";
 import { getCollection } from "astro:content";
 
@@ -15,7 +15,7 @@ const pageDescription = `Denní menu ${siteConfig.name} — aktuální polední 
   description={pageDescription}
   canonical="/denni-menu/"
 >
-  <BackgroundDoodles />
+  <Doodles />
   <section class="section-padding relative bg-organic">
     <div class="bg-blob-left"></div>
     <div class="section-container relative z-10">
