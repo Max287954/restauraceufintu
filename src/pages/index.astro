@@ -109,15 +109,12 @@ const mapsEmbedUrl =
               class="rounded-2xl shadow-lg object-cover w-full h-full col-span-1"
               style="aspect-ratio: 4/3;"
             />
-            <img
-              src="https://images.unsplash.com/photo-1551218808-94e8940c51ed?w=400&h=300&fit=crop&q=80"
+            <Image
+              src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?q=80&w=1000&auto=format&fit=crop"
               alt="Plný talíř českého jídla"
-              width="400"
-              height="300"
-              loading="lazy"
-              decoding="async"
+              width={400}
+              height={300}
               class="rounded-2xl shadow-lg object-cover w-full h-full col-span-1"
-              style="aspect-ratio: 4/3;"
             />
             <img
               src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=400&h=300&fit=crop&q=80"
@@ -130,53 +127,6 @@ const mapsEmbedUrl =
               style="aspect-ratio: 4/3;"
             />
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Opening Hours -->
-  <section class="section-padding bg-cream-dark/50 relative" id="oteviraci-doba">
-    <div class="section-container relative z-10">
-      <div class="text-center mb-12">
-        <span class="text-terracotta font-medium text-sm uppercase tracking-widest">
-          Kdy máme otevřeno
-        </span>
-        <h2 class="text-3xl md:text-4xl font-heading font-bold text-warm-brown mt-3">
-          Otevírací doba
-        </h2>
-      </div>
-      <div class="max-w-md mx-auto">
-        <div class="card">
-          <ul class="divide-y divide-cream-dark" role="list">
-            {Object.entries(siteConfig.openingHours).map(([key, day]) => {
-              const today = new Date()
-                .toLocaleDateString("cs-CZ", { weekday: "long" })
-                .toLowerCase();
-              const isToday = day.label.toLowerCase() === today;
-              return (
-                <li
-                  class={`flex justify-between items-center py-3 px-2 ${
-                    isToday ? "bg-terracotta-light/20 -mx-2 px-4 rounded-lg" : ""
-                  }`}
-                >
-                  <span
-                    class={`font-medium ${isToday ? "text-terracotta-dark font-semibold" : "text-warm-brown"}`}
-                  >
-                    {day.label}
-                    {isToday && (
-                      <span class="ml-2 text-xs bg-terracotta text-white px-2 py-0.5 rounded-full">
-                        Dnes
-                      </span>
-                    )}
-                  </span>
-                  <span class="text-warm-brown/70">
-                    {day.open} – {day.close}
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
         </div>
       </div>
     </div>
