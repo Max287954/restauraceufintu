@@ -23,6 +23,10 @@ export default defineConfig({
     },
   },
 
+  image: {
+    domains: ["images.unsplash.com"],
+  },
+
   integrations: [
     sitemap({
       i18n: {

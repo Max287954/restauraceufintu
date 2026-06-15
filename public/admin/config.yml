@@ -23,7 +23,12 @@ collections:
         widget: "list"
         fields:
           - { label: "Den (např. Pondělí)", name: "day_name", widget: "string" }
-          - { label: "Polévka", name: "soup", widget: "string" }
+          - label: "Polévka"
+            name: "soup"
+            widget: "object"
+            fields:
+              - { label: "Název polévky", name: "name", widget: "string" }
+              - { label: "Cena (Kč)", name: "price", widget: "number", value_type: "int" }
           - label: "Hlavní chody"
             name: "mains"
             widget: "list"

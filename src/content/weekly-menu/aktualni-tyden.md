@@ -2,7 +2,9 @@
 title: "15.6. - 19.6. 2026"
 days:
   - day_name: "Pondělí"
-    soup: "Hovězí vývar s masem a nudlemi"
+    soup:
+      name: "Hovězí vývar s masem a nudlemi"
+      price: 45
     mains:
       - name: "Smažený kuřecí řízek, bramborová kaše, okurkový salát"
         price: 149
@@ -14,7 +16,9 @@ days:
         price: 139
         allergens: "7"
   - day_name: "Úterý"
-    soup: "Česnečka se šunkou a sýrem"
+    soup:
+      name: "Česnečka se šunkou a sýrem"
+      price: 40
     mains:
       - name: "Svíčková na smetaně, houskový knedlík"
         price: 165

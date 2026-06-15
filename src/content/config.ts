@@ -7,7 +7,10 @@ const weeklyMenuCollection = defineCollection({
     days: z.array(
       z.object({
         day_name: z.string(),
-        soup: z.string(),
+        soup: z.object({
+          name: z.string(),
+          price: z.number(),
+        }),
         mains: z.array(
           z.object({
             name: z.string(),
