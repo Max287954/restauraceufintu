@@ -8,8 +8,8 @@ export const siteConfig = {
 
   owner: {
     name: "[doplňte provozovatele]",
-    ico: "[doplňte IČO]",
-    dic: "[doplňte DIČ]",
+    ico: "12345678",
+    dic: "12345678",
     registeredAddress: "Krajková 241, 35709 Krajková, CZ",
     phone: "+420 792 768 000",
     email: "info@restauraceufintu.cz",

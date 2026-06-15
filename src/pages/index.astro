@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "@components/Layout.astro";
+import BackgroundDoodles from "@components/BackgroundDoodles.astro";
 import { siteConfig } from "@data/profile";
 
 const pageDescription = `${siteConfig.name} v Krajkové — poctivá česká kuchyně, denní menu a příjemné posezení. Otevřeno každý den.`;
@@ -10,6 +11,7 @@ const mapsEmbedUrl =
 ---
 
 <Layout title="Domů" description={pageDescription} canonical="/">
+  <BackgroundDoodles />
   <!-- Hero Section -->
   <section class="relative bg-organic min-h-[85vh] flex items-center">
     <div class="bg-blob-left"></div>
