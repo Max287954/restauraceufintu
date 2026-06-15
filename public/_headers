@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' identity.netlify.com https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://maps.googleapis.com https://images.unsplash.com; font-src 'self'; frame-src 'self' https://www.google.com/maps/ https://maps.google.com https://www.google.com; frame-ancestors 'none';
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' identity.netlify.com https://unpkg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://maps.googleapis.com https://images.unsplash.com; font-src 'self'; frame-src 'self' https://www.google.com/maps/ https://maps.google.com https://www.google.com; frame-ancestors 'none';
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
