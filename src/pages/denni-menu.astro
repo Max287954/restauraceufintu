@@ -54,23 +54,25 @@ const pageDescription = `Týdenní menu ${siteConfig.name} — aktuální poledn
 
               <div class="p-5 md:p-6 space-y-4">
                 <!-- Soup -->
-                <div class="bg-[#f3f0e8]/30 rounded-xl p-4">
-                  <span class="text-xs uppercase tracking-widest text-olive font-medium flex items-center gap-2 mb-2">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
-                      <line x1="6" y1="17" x2="18" y2="17"/>
-                    </svg>
-                    Polévka
-                  </span>
-                  <div class="flex justify-between items-center gap-4">
-                    <p class="text-base font-medium text-warm-brown">
-                      {day.soup.name}
-                    </p>
-                    <span class="font-heading font-bold text-lg text-terracotta whitespace-nowrap">
-                      {day.soup.price} Kč
+                {day.soup && (
+                  <div class="bg-[#f3f0e8]/30 rounded-xl p-4">
+                    <span class="text-xs uppercase tracking-widest text-olive font-medium flex items-center gap-2 mb-2">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+                        <line x1="6" y1="17" x2="18" y2="17"/>
+                      </svg>
+                      Polévka
                     </span>
+                    <div class="flex justify-between items-center gap-4">
+                      <p class="text-base font-medium text-warm-brown">
+                        {day.soup.name}
+                      </p>
+                      <span class="font-heading font-bold text-lg text-terracotta whitespace-nowrap">
+                        {day.soup.price} Kč
+                      </span>
+                    </div>
                   </div>
-                </div>
+                )}
 
                 <!-- Main dishes -->
                 <div>
