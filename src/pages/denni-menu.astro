@@ -2,22 +2,20 @@
 import Layout from "@components/Layout.astro";
 import { siteConfig } from "@data/profile";
 import { getCollection } from "astro:content";
-import BackgroundDoodles from "@components/BackgroundDoodles.astro";
 
 const weeklyMenus = await getCollection("weekly-menu");
 const latest = weeklyMenus.sort((a, b) => b.data.title.localeCompare(a.data.title))[0];
 
-const pageDescription = `Týdenní menu ${siteConfig.name} — aktuální polední nabídka na celý týden včetně polévek a hlavních jídel.`;
+const pageDescription = `Denní menu ${siteConfig.name} — aktuální polední nabídka na celý týden včetně polévek a hlavních jídel.`;
 ---
 
 <Layout
-  title="Týdenní menu"
+  title="Denní menu"
   description={pageDescription}
   canonical="/denni-menu/"
 >
   <section class="section-padding relative bg-organic">
     <div class="bg-blob-left"></div>
-    <BackgroundDoodles />
     <div class="section-container relative z-10">
       <div class="text-center mb-12">
         <span class="text-terracotta font-medium text-sm uppercase tracking-widest">
@@ -55,7 +53,7 @@ const pageDescription = `Týdenní menu ${siteConfig.name} — aktuální poledn
               <div class="p-5 md:p-6 space-y-4">
                 <!-- Soup -->
                 {day.soup && (
-                  <div class="bg-[#f3f0e8]/30 rounded-xl p-4">
+                  <div class="bg-[#f3f0e8]/30 rounded-lg p-4">
                     <span class="text-xs uppercase tracking-widest text-olive font-medium flex items-center gap-2 mb-2">
                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
@@ -91,7 +89,7 @@ const pageDescription = `Týdenní menu ${siteConfig.name} — aktuální poledn
                       <li
                         class={`flex justify-between items-start p-4 gap-4 ${
                           idx % 2 === 0 ? "bg-[#f3f0e8]/30" : "bg-white/40"
-                        } rounded-xl`}
+                        } rounded-lg`}
                       >
                         <div class="flex-1">
                           <p class="font-medium text-warm-brown">{dish.name}</p>

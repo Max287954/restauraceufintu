@@ -2,7 +2,6 @@
 import Layout from "@components/Layout.astro";
 import { siteConfig } from "@data/profile";
 import { getCollection } from "astro:content";
-import BackgroundDoodles from "@components/BackgroundDoodles.astro";
 
 const menuItems = await getCollection("menu");
 const sorted = menuItems.sort((a, b) => a.data.order - b.data.order);
@@ -17,10 +16,9 @@ const categories = [
 const pageDescription = `Jídelní lístek ${siteConfig.name} — stálá nabídka polévek, hlavních jídel, dezertů a nápojů.`;
 ---
 
-<Layout title="Jídelní lístek" description={pageDescription} canonical="/jidelnistek/">
+<Layout title="Jídelní lístek" description={pageDescription} canonical="/jidelni-listek/">
   <section class="section-padding relative bg-organic">
     <div class="bg-blob-right"></div>
-    <BackgroundDoodles />
     <div class="section-container relative z-10">
       <div class="text-center mb-16">
         <span class="text-terracotta font-medium text-sm uppercase tracking-widest">
@@ -56,7 +54,7 @@ const pageDescription = `Jídelní lístek ${siteConfig.name} — stálá nabíd
                     <li
                       class={`flex justify-between items-start gap-5 p-5 md:p-6 ${
                         idx % 2 === 0 ? "bg-[#f3f0e8]/30" : "bg-white/40"
-                      } rounded-xl`}
+                      } rounded-lg`}
                     >
                       <div class="flex-1">
                         <h3 class="font-semibold text-warm-brown text-lg">{item.data.name}</h3>

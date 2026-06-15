@@ -1,8 +1,8 @@
 backend:
   name: github
   branch: main
-  repo: Max287954/restauracenatruhlarne
-  base_url: https://restauracenatruhlarne.pages.dev
+  repo: Max287954/restauraceufintu
+  base_url: https://restauraceufintu.pages.dev
 
 local_backend: true
 
@@ -13,7 +13,7 @@ locale: "cs"
 
 collections:
   - name: "weekly-menu"
-    label: "Správa menu (Týdenní)"
+    label: "Denní menu (Týdenní)"
     folder: "src/content/weekly-menu"
     create: true
     slug: "{{slug}}"
@@ -27,6 +27,7 @@ collections:
           - label: "Polévka"
             name: "soup"
             widget: "object"
+            required: false
             fields:
               - { label: "Název polévky", name: "name", widget: "string" }
               - { label: "Cena (Kč)", name: "price", widget: "number", value_type: "int" }
@@ -56,6 +57,6 @@ collections:
       - { label: "Alergeny", name: "allergens", widget: "string", required: false }
       - { label: "Pořadí", name: "order", widget: "number", default: 0, value_type: "int" }
 
-site_url: "https://restauracenatruhlarne.cz"
-display_url: "https://restauracenatruhlarne.cz"
-logo_url: "https://restauracenatruhlarne.cz/favicon.svg"
+site_url: "https://restauraceufintu.cz"
+display_url: "https://restauraceufintu.cz"
+logo_url: "https://restauraceufintu.cz/favicon.svg"

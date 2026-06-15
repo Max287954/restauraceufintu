@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #faf9f6;
-  --color-cream-dark: #f0ede6;
-  --color-terracotta: #c67a4a;
-  --color-terracotta-dark: #a85d30;
-  --color-terracotta-light: #e8c4a8;
-  --color-warm-brown: #5c3d2e;
-  --color-warm-brown-dark: #3d2518;
-  --color-olive: #7d8a5e;
-  --color-olive-light: #a8b48a;
-  --font-heading: "Playfair Display", Georgia, serif;
+  --color-cream: #f7faf8;
+  --color-cream-dark: #e4ece7;
+  --color-terracotta: #2d6a4f;
+  --color-terracotta-dark: #1b4332;
+  --color-terracotta-light: #95d5b2;
+  --color-warm-brown: #1b3a2d;
+  --color-warm-brown-dark: #0f2419;
+  --color-olive: #52796f;
+  --color-olive-light: #84a98c;
+  --font-heading: "Lora", Georgia, serif;
   --font-body: "Inter", system-ui, -apple-system, sans-serif;
 }
 
@@ -58,7 +58,7 @@
   }
 
   .card {
-    @apply bg-white/70 backdrop-blur-sm rounded-2xl shadow-md border border-cream-dark p-6;
+    @apply bg-white/70 backdrop-blur-sm rounded-lg shadow-md border border-cream-dark p-6;
   }
 }
 
@@ -74,7 +74,7 @@
   right: -5%;
   width: 40%;
   height: 60%;
-  background: radial-gradient(ellipse at center, rgba(198, 122, 74, 0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(45, 106, 79, 0.08) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
@@ -86,7 +86,7 @@
   left: -8%;
   width: 35%;
   height: 50%;
-  background: radial-gradient(ellipse at center, rgba(125, 138, 94, 0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(82, 121, 111, 0.06) 0%, transparent 70%);
   border-radius: 60% 40% 50% 45%;
   pointer-events: none;
 }
@@ -97,7 +97,7 @@
   right: -6%;
   width: 30%;
   height: 45%;
-  background: radial-gradient(ellipse at center, rgba(198, 122, 74, 0.06) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(45, 106, 79, 0.06) 0%, transparent 70%);
   border-radius: 45% 55% 40% 60%;
   pointer-events: none;
 }

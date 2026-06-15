@@ -2,12 +2,11 @@
 import { Image } from "astro:assets";
 import Layout from "@components/Layout.astro";
 import { siteConfig } from "@data/profile";
-import BackgroundDoodles from "@components/BackgroundDoodles.astro";
 
-const pageDescription = `${siteConfig.name} v Habartově — poctivá česká kuchyně, denní menu a příjemné posezení. Otevřeno každý den.`;
+const pageDescription = `${siteConfig.name} v Krajkové — poctivá česká kuchyně, denní menu a příjemné posezení. Otevřeno každý den.`;
 
 const mapsEmbedUrl =
-  "https://maps.google.com/maps?q=1.%20M%C3%A1je%20178,%2035709%20Habartov,%20CZ&t=&z=16&ie=UTF8&iwloc=&output=embed";
+  "https://maps.google.com/maps?q=Krajkov%C3%A1%20241,%2035709%20Krajkov%C3%A1,%20CZ&t=&z=16&ie=UTF8&iwloc=&output=embed";
 ---
 
 <Layout title="Domů" description={pageDescription} canonical="/">
@@ -15,7 +14,6 @@ const mapsEmbedUrl =
   <section class="relative bg-organic min-h-[85vh] flex items-center">
     <div class="bg-blob-left"></div>
     <div class="bg-blob-right"></div>
-    <BackgroundDoodles />
     <div class="section-container relative z-10 py-20 md:py-32 w-full">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <!-- Left: Text -->
@@ -23,20 +21,20 @@ const mapsEmbedUrl =
           <span
             class="inline-block text-terracotta font-medium text-sm uppercase tracking-widest mb-4"
           >
-            Vítejte v Habartově
+            Vítejte v Krajkové
           </span>
           <h1
             class="text-4xl md:text-6xl lg:text-7xl font-heading font-bold text-warm-brown leading-tight mb-6"
           >
-            Restaurace<br class="sm:hidden" /> Na Truhlárně
+            Restaurace<br class="sm:hidden" /> u Fintů
           </h1>
           <p class="text-lg md:text-xl text-warm-brown/70 max-w-lg mb-10 leading-relaxed">
-            Poctivá česká kuchyně, čepované pivo a příjemné posezení v srdci Habartova. Vaříme s
+            Poctivá česká kuchyně, čepované pivo a příjemné posezení v Krajkové. Vaříme s
             láskou z čerstvých surovin každý den.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a href="/denni-menu/" class="btn-primary text-lg"> Denní menu </a>
-            <a href="/jidelnistek/" class="btn-secondary text-lg"> Jídelní lístek </a>
+            <a href="/jidelni-listek/" class="btn-secondary text-lg"> Jídelní lístek </a>
           </div>
         </div>
         <!-- Right: Hero Image -->
@@ -56,7 +54,6 @@ const mapsEmbedUrl =
   <!-- About Section -->
   <section class="section-padding relative" id="o-nas">
     <div class="bg-blob-right" style="top: 10%; left: auto; right: -5%"></div>
-    <BackgroundDoodles />
     <div class="section-container relative z-10">
       <div class="grid md:grid-cols-2 gap-12 items-center">
         <div>
@@ -65,7 +62,7 @@ const mapsEmbedUrl =
             Vítejte u nás
           </h2>
           <p class="text-warm-brown/70 leading-relaxed mb-4">
-            Restaurace Na Truhlárně je místo, kde se setkává tradice s moderním přístupem ke
+            Restaurace u Fintů je místo, kde se setkává tradice s moderním přístupem ke
             gastronomii. Majitel a šéfkuchař Jaroslav Šindelář se svým týmem denně připravuje
             poctivá jídla z čerstvých, převážně lokálních surovin.
           </p>
@@ -87,28 +84,28 @@ const mapsEmbedUrl =
               alt="České pivo v restauraci"
               width={400}
               height={400}
-              class="w-full h-full object-cover aspect-square rounded-xl shadow-lg"
+              class="w-full h-full object-cover aspect-square rounded-lg shadow-lg"
             />
             <Image
               src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?q=80&w=800&auto=format&fit=crop"
               alt="Plný talíř českého jídla"
               width={400}
               height={400}
-              class="w-full h-full object-cover aspect-square rounded-xl shadow-lg"
+              class="w-full h-full object-cover aspect-square rounded-lg shadow-lg"
             />
             <Image
               src="https://images.unsplash.com/photo-1599921841143-819065a55cc6?q=80&w=800&auto=format&fit=crop"
               alt="Svíčková na smetaně"
               width={400}
               height={400}
-              class="w-full h-full object-cover aspect-square rounded-xl shadow-lg"
+              class="w-full h-full object-cover aspect-square rounded-lg shadow-lg"
             />
             <Image
               src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=800&auto=format&fit=crop"
               alt="Čepované pivo zblízka"
               width={400}
               height={400}
-              class="w-full h-full object-cover aspect-square rounded-xl shadow-lg"
+              class="w-full h-full object-cover aspect-square rounded-lg shadow-lg"
             />
           </div>
         </div>
@@ -119,7 +116,6 @@ const mapsEmbedUrl =
   <!-- Google Maps & Contact -->
   <section class="section-padding relative" id="kontakt">
     <div class="bg-blob-left"></div>
-    <BackgroundDoodles />
     <div class="section-container relative z-10">
       <div class="text-center mb-12">
         <span class="text-olive font-medium text-sm uppercase tracking-widest">
@@ -200,7 +196,7 @@ const mapsEmbedUrl =
         </div>
         <div class="rounded-[2rem] overflow-hidden shadow-xl h-[350px] md:h-full min-h-[350px]">
           <iframe
-            title="Restaurace Na Truhlárně — mapa"
+            title="Restaurace u Fintů — mapa"
             src={mapsEmbedUrl}
             width="100%"
             height="100%"

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "🔍 Restaurace Na Truhlárně — Před-spouštěcí kontrola"
+echo "🔍 Restaurace u Fintů — Před-spouštěcí kontrola"
 echo "======================================================"
 echo ""
 

@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath } from "node:url";
 
 export default defineConfig({
-  site: "https://restauracenatruhlarne.cz",
+  site: "https://restauraceufintu.cz",
   output: "static",
   trailingSlash: "always",
   build: {
