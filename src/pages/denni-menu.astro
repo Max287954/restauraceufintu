@@ -38,82 +38,79 @@ const pageDescription = `Denní menu ${siteConfig.name} — aktuální polední 
           <p class="mt-2">Stavte se prosím později nebo nás kontaktujte.</p>
         </div>
       ) : (
-        <div class="space-y-12">
+        <div class="bg-stone-50/50 rounded-3xl p-6 md:p-10 space-y-10">
           <h2 class="font-heading text-2xl font-semibold text-warm-brown text-center">
             {latest.data.title}
           </h2>
 
-          {latest.data.days.map((day) => (
-            <article class="card max-w-2xl mx-auto !p-0 overflow-hidden">
-              <!-- Day Header -->
-              <div class="flex items-center gap-3 p-5 pb-4 border-b border-cream-dark/50 bg-[#f3f0e8]/40">
-                <span class="font-heading text-lg font-semibold text-warm-brown">
-                  {day.day_name}
-                </span>
-              </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {latest.data.days.map((day) => (
+              <article class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden">
+                {/* Day Header */}
+                <div class="flex items-center gap-3 px-5 py-4 border-b border-stone-100 bg-stone-50">
+                  <span class="font-heading text-lg font-semibold text-warm-brown">
+                    {day.day_name}
+                  </span>
+                </div>
 
-              <div class="p-5 md:p-6 space-y-4">
-                <!-- Soup -->
-                {day.soup && (
-                  <div class="bg-[#f3f0e8]/30 rounded-lg p-4">
-                    <span class="text-xs uppercase tracking-widest text-olive font-medium flex items-center gap-2 mb-2">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
-                        <line x1="6" y1="17" x2="18" y2="17"/>
-                      </svg>
-                      Polévka
-                    </span>
-                    <div class="flex justify-between items-center gap-4">
-                      <p class="text-base font-medium text-warm-brown">
-                        {day.soup.name}
-                      </p>
-                      <span class="font-heading font-bold text-lg text-terracotta whitespace-nowrap">
-                        {day.soup.price} Kč
+                <div class="p-5 space-y-3">
+                  {/* Soup */}
+                  {day.soup && (
+                    <div class="bg-stone-50/80 rounded-xl p-4">
+                      <span class="text-xs uppercase tracking-widest text-olive font-medium flex items-center gap-2 mb-2">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
+                          <line x1="6" y1="17" x2="18" y2="17"/>
+                        </svg>
+                        Polévka
                       </span>
+                      <div class="flex justify-between items-center gap-4">
+                        <p class="text-base font-medium text-stone-900">
+                          {day.soup.name}
+                        </p>
+                        <span class="font-heading font-bold text-lg text-terracotta whitespace-nowrap">
+                          {day.soup.price} Kč
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Main dishes */}
+                  <div>
+                    <span class="text-xs uppercase tracking-widest text-olive font-medium flex items-center gap-2 mb-3 px-1">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
+                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
+                        <line x1="6" y1="1" x2="6" y2="4"/>
+                        <line x1="10" y1="1" x2="10" y2="4"/>
+                        <line x1="14" y1="1" x2="14" y2="4"/>
+                      </svg>
+                      Hlavní jídla
+                    </span>
+                    <div class="space-y-2">
+                      {day.mains.map((dish) => (
+                        <div class="bg-stone-50/80 rounded-xl p-4 hover:shadow-sm transition-shadow">
+                          <div class="flex justify-between items-start gap-4">
+                            <div class="flex-1">
+                              <p class="font-medium text-stone-900">{dish.name}</p>
+                              {dish.allergens && (
+                                <p class="text-stone-400 text-xs mt-1">
+                                  Alergeny: {dish.allergens}
+                                </p>
+                              )}
+                            </div>
+                            <span class="font-heading font-bold text-lg text-terracotta whitespace-nowrap shrink-0">
+                              {dish.price} Kč
+                            </span>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
-                )}
-
-                <!-- Main dishes -->
-                <div>
-                  <span class="text-xs uppercase tracking-widest text-olive font-medium flex items-center gap-2 mb-3">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                      <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
-                      <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-                      <line x1="6" y1="1" x2="6" y2="4"/>
-                      <line x1="10" y1="1" x2="10" y2="4"/>
-                      <line x1="14" y1="1" x2="14" y2="4"/>
-                    </svg>
-                    Hlavní jídla
-                  </span>
-                  <ul class="space-y-0">
-                    {day.mains.map((dish, idx) => (
-                      <li
-                        class={`flex justify-between items-start p-4 gap-4 ${
-                          idx % 2 === 0 ? "bg-[#f3f0e8]/30" : "bg-white/40"
-                        } rounded-lg`}
-                      >
-                        <div class="flex-1">
-                          <p class="font-medium text-warm-brown">{dish.name}</p>
-                          {dish.allergens && (
-                            <p class="text-xs text-warm-brown/40 mt-1">
-                              Alergeny: {dish.allergens}
-                            </p>
-                          )}
-                        </div>
-                        <div class="flex items-center gap-3 shrink-0">
-                          <span class="hidden sm:block flex-1 border-b border-dotted border-stone-300 min-w-[2rem] self-center"></span>
-                          <span class="font-heading font-bold text-lg text-terracotta whitespace-nowrap">
-                            {dish.price} Kč
-                          </span>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
       )}
 
