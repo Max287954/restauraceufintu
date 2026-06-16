@@ -10,11 +10,7 @@ const latest = weeklyMenus.sort((a, b) => b.data.title.localeCompare(a.data.titl
 const pageDescription = `Denní menu ${siteConfig.name} — aktuální polední nabídka na celý týden včetně polévek a hlavních jídel.`;
 ---
 
-<Layout
-  title="Denní menu"
-  description={pageDescription}
-  canonical="/denni-menu/"
->
+<Layout title="Denní menu" description={pageDescription} canonical="/denni-menu/">
   <Doodles />
   <section class="section-padding relative bg-organic">
     <div class="bg-blob-left"></div>
@@ -23,108 +19,154 @@ const pageDescription = `Denní menu ${siteConfig.name} — aktuální polední 
         <span class="text-terracotta font-medium text-sm uppercase tracking-widest">
           Polední nabídka
         </span>
-        <h1 class="text-3xl md:text-5xl font-heading font-bold text-warm-brown mt-3">
-          Denní menu
-        </h1>
+        <h1 class="text-3xl md:text-5xl font-heading font-bold text-warm-brown mt-3">Denní menu</h1>
         <p class="text-warm-brown/70 mt-4 max-w-lg mx-auto">
-          Každý všední den pro vás připravujeme čerstvé polední menu. Podívejte
-          se, co jsme pro vás nachystali na celý týden.
+          Každý všední den pro vás připravujeme čerstvé polední menu. Podívejte se, co jsme pro vás
+          nachystali na celý týden.
         </p>
       </div>
 
-      {!latest ? (
-        <div class="text-center text-warm-brown/50 py-20">
-          <p class="text-lg">Pro tento týden zatím nebylo vloženo menu.</p>
-          <p class="mt-2">Stavte se prosím později nebo nás kontaktujte.</p>
-        </div>
-      ) : (
-        <div class="bg-stone-50/50 rounded-3xl p-6 md:p-10 space-y-10">
-          <h2 class="font-heading text-2xl font-semibold text-warm-brown text-center">
-            {latest.data.title}
-          </h2>
+      {
+        !latest ? (
+          <div class="text-center text-warm-brown/50 py-20">
+            <p class="text-lg">Pro tento týden zatím nebylo vloženo menu.</p>
+            <p class="mt-2">Stavte se prosím později nebo nás kontaktujte.</p>
+          </div>
+        ) : (
+          <div class="bg-stone-50/50 rounded-3xl p-6 md:p-10 space-y-10">
+            <h2 class="font-heading text-2xl font-semibold text-warm-brown text-center">
+              {latest.data.title}
+            </h2>
 
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {latest.data.days.map((day) => (
-              <article class="bg-white rounded-2xl shadow-sm border border-stone-100 overflow-hidden">
-                {/* Day Header */}
-                <div class="flex items-center gap-3 px-5 py-4 border-b border-stone-100 bg-stone-50">
-                  <span class="font-heading text-lg font-semibold text-warm-brown">
-                    {day.day_name}
-                  </span>
-                </div>
+            <div class="flex flex-col gap-8 max-w-3xl mx-auto">
+              {latest.data.days.map((day) => (
+                <article
+                  data-day={day.day_name.toLowerCase()}
+                  class="border border-stone-200 shadow-sm rounded-2xl overflow-hidden bg-white transition-colors duration-300"
+                >
+                  {/* Day Header */}
+                  <div class="flex items-center gap-3 px-5 py-4 border-b border-stone-100 bg-stone-50">
+                    <span class="font-heading text-lg font-semibold text-warm-brown">
+                      {day.day_name}
+                    </span>
+                    <span class="today-badge hidden ml-3 text-xs font-bold text-orange-500 uppercase tracking-wider bg-orange-100 px-2 py-1 rounded-full">
+                      Dnes
+                    </span>
+                  </div>
 
-                <div class="p-5 space-y-3">
-                  {/* Soup */}
-                  {day.soup && (
-                    <div class="bg-stone-50/80 rounded-xl p-4">
-                      <span class="text-xs uppercase tracking-widest text-olive font-medium flex items-center gap-2 mb-2">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                          <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/>
-                          <line x1="6" y1="17" x2="18" y2="17"/>
-                        </svg>
-                        Polévka
-                      </span>
-                      <div class="flex justify-between items-center gap-4">
-                        <p class="text-base font-medium text-stone-900">
-                          {day.soup.name}
-                        </p>
-                        <span class="font-heading font-bold text-lg text-terracotta whitespace-nowrap">
-                          {day.soup.price} Kč
+                  <div class="p-5 space-y-3">
+                    {/* Soup */}
+                    {day.soup && (
+                      <div class="bg-stone-50/80 rounded-xl p-4">
+                        <span class="text-xs uppercase tracking-widest text-olive font-medium flex items-center gap-2 mb-2">
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            aria-hidden="true"
+                          >
+                            <path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z" />
+                            <line x1="6" y1="17" x2="18" y2="17" />
+                          </svg>
+                          Polévka
                         </span>
+                        <div class="flex justify-between items-center gap-4">
+                          <p class="text-base font-medium text-stone-900">{day.soup.name}</p>
+                          <span class="font-heading font-bold text-lg text-terracotta whitespace-nowrap">
+                            {day.soup.price} Kč
+                          </span>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Main dishes */}
+                    <div>
+                      <span class="text-xs uppercase tracking-widest text-olive font-medium flex items-center gap-2 mb-3 px-1">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                          <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                          <line x1="6" y1="1" x2="6" y2="4" />
+                          <line x1="10" y1="1" x2="10" y2="4" />
+                          <line x1="14" y1="1" x2="14" y2="4" />
+                        </svg>
+                        Hlavní jídla
+                      </span>
+                      <div class="space-y-2">
+                        {day.mains.map((dish) => (
+                          <div class="bg-stone-50/80 rounded-xl p-4 hover:shadow-sm transition-shadow">
+                            <div class="flex justify-between items-start gap-4">
+                              <div class="flex-1">
+                                <p class="font-medium text-stone-900">{dish.name}</p>
+                                {dish.allergens && (
+                                  <p class="text-stone-400 text-xs mt-1">
+                                    Alergeny: {dish.allergens}
+                                  </p>
+                                )}
+                              </div>
+                              <span class="font-heading font-bold text-lg text-terracotta whitespace-nowrap shrink-0">
+                                {dish.price} Kč
+                              </span>
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                  )}
-
-                  {/* Main dishes */}
-                  <div>
-                    <span class="text-xs uppercase tracking-widest text-olive font-medium flex items-center gap-2 mb-3 px-1">
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <path d="M18 8h1a4 4 0 0 1 0 8h-1"/>
-                        <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/>
-                        <line x1="6" y1="1" x2="6" y2="4"/>
-                        <line x1="10" y1="1" x2="10" y2="4"/>
-                        <line x1="14" y1="1" x2="14" y2="4"/>
-                      </svg>
-                      Hlavní jídla
-                    </span>
-                    <div class="space-y-2">
-                      {day.mains.map((dish) => (
-                        <div class="bg-stone-50/80 rounded-xl p-4 hover:shadow-sm transition-shadow">
-                          <div class="flex justify-between items-start gap-4">
-                            <div class="flex-1">
-                              <p class="font-medium text-stone-900">{dish.name}</p>
-                              {dish.allergens && (
-                                <p class="text-stone-400 text-xs mt-1">
-                                  Alergeny: {dish.allergens}
-                                </p>
-                              )}
-                            </div>
-                            <span class="font-heading font-bold text-lg text-terracotta whitespace-nowrap shrink-0">
-                              {dish.price} Kč
-                            </span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
                   </div>
-                </div>
-              </article>
-            ))}
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
 
       <!-- Allergen Legend -->
       <div class="max-w-2xl mx-auto mt-12 text-xs text-warm-brown/40 space-y-1">
         <p class="font-medium text-warm-brown/50">Legenda alergenů:</p>
-        <p>
-          1 — Obiloviny obsahující lepek, 3 — Vejce, 4 — Ryby, 7 — Mléko,
-          9 — Celer
-        </p>
-        <p class="mt-2 italic">
-          Změna jídelníčku vyhrazena. Ceny jsou uvedeny v Kč.
-        </p>
+        <p>1 — Obiloviny obsahující lepek, 3 — Vejce, 4 — Ryby, 7 — Mléko, 9 — Celer</p>
+        <p class="mt-2 italic">Změna jídelníčku vyhrazena. Ceny jsou uvedeny v Kč.</p>
       </div>
     </div>
   </section>
 </Layout>
+
+<script>
+  const dayIndex = new Date().getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+  const czechDays = ["neděle", "pondělí", "úterý", "středa", "čtvrtek", "pátek", "sobota"];
+  const today = czechDays[dayIndex];
+
+  if (dayIndex >= 1 && dayIndex <= 5) {
+    const card = document.querySelector(`[data-day="${today}"]`);
+    if (card) {
+      // Highlight the card
+      card.classList.remove("border-stone-200");
+      card.classList.add(
+        "border-2",
+        "border-orange-500",
+        "shadow-md",
+        "ring-4",
+        "ring-orange-500/10",
+      );
+
+      // Show the "Dnes" badge
+      const badge = card.querySelector(".today-badge");
+      if (badge) {
+        badge.classList.remove("hidden");
+      }
+    }
+  }
+</script>
